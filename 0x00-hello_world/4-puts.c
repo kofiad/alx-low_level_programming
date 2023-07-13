@@ -1,5 +1,6 @@
 #include<stdio.h>
-/** main method 
+/**
+ * main method 
  * returns 0
  */
 
