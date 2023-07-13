@@ -1,5 +1,8 @@
 #include<stdio.h>
-/*main method, returns 0*/
+/** main method 
+ * returns 0
+ */
+
 int main(void)
 {
 	/*creating the string*/
