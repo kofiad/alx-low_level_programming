@@ -1,2 +1,14 @@
 #!/bin/bash
-gcc -S -masm=intel $Cfile 
+# Get the C file name from the variable $CFILE
+c_file="$CFILE"
+
+# Extract the base name (without extension)
+base_name="${c_file%.*}"
+
+# Set the output file name with .s extension
+output_file="${base_name}.s"
+
+# Generate the assembly code using GCC and save it to the output file
+gcc -S -masm=intel "$c_file" -o "$output_file"
+
+echo "Assembly code generated and saved as $output_file"
