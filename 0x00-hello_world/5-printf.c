@@ -3,7 +3,7 @@
 /**
  * main - beginning
  *
- * Return: must be void always 
+ * Return: must be void always
 */
 int main(void)
 {
