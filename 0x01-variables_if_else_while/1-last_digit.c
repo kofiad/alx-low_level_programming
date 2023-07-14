@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main: print last digit of number stored in variable n 
+ * main - print last digit of number stored in variable n
  *
  * Return: 0
 */
