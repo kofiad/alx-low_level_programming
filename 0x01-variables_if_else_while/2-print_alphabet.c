@@ -14,5 +14,6 @@ int main(void)
 	{
 		putchar(alphabet_in_lowercase);
 		putchar(' ');
+	}
 return 0;
 }
