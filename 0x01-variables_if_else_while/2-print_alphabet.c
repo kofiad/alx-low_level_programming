@@ -9,7 +9,7 @@ int main(void)
 	/*declaration of data type*/
 	char alphabet;
 
-	/*using for loop to perform print*/
+	/*print alphabets*/
 	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
 	{
 		putchar(alphabet);

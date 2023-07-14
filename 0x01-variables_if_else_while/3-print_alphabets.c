@@ -8,10 +8,12 @@ int main(void)
 {
 	char alphabet;
 
-	for (alphabet = 'A'; alphabet <= 'Z'; alphabet++)
+	/*print alphabet in lowercase*/
+	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
 	{
 		putchar(alphabet);
 	}
+	/*print alphabet in uppercase*/
 	for (alphabet = 'A'; alphabet <= 'Z'; alphabet++)
 	{
 		putchar(alphabet);
