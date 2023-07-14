@@ -12,8 +12,7 @@ int main(void)
 	/*using for loop to perform print*/
 	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
 	{
-		putchar(alphabet);
-		putchar( '\t');
+		putchar(alphabet'\n');
 	}
 return (0);
 }
