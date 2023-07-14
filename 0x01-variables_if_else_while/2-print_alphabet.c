@@ -7,13 +7,12 @@
 int main(void)
 {
 	/*declaration of data type*/
-	char alphabet_in_lowercase;
+	char alphabet;
 
 	/*using for loop to perform print*/
-	for (alphabet_in_lowercase = 'a'; alphabet_in_lowercase <='z'; alphabet_in_lowercase++)
+	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
 	{
-		putchar(alphabet_in_lowercase);
-		putchar(' ');
+		putchar(alphabet);
 	}
-return 0;
+return (0);
 }
