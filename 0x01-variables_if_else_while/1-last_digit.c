@@ -8,11 +8,11 @@
 */
 int main(void)
 {
-	int n;
+	int n, x;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	int x = n % 10;
+	x = n % 10;
 	/* if the last digit of n is greater than 5: the string and is greater than 5*/
 	if (x > 5)
 	{
