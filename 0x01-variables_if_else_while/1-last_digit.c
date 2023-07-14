@@ -12,7 +12,7 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	x = n % 10;
+	int x = n % 10;
 	/* if the last digit of n is greater than 5: the string and is greater than 5*/
 	if (x > 5)
 	{
