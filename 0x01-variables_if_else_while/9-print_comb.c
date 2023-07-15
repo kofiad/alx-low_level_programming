@@ -10,10 +10,10 @@ int main(void)
 
 	for (i = 0; i <= 9; i++){
 		putchar( i + '0');/*print current digit*/
-	}
 	if (i != 0){
 		putchar(',');/*print , after every number*/
 		putchar(' ');/*print space after every number*/
+	}
 	}
 	putchar('\n');
 return (0);
