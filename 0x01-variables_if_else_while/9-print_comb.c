@@ -8,9 +8,11 @@ int main(void)
 {
 	int i;/*declare variable i*/
 
-	for (i = 0; i <= 9; i++){
-		putchar( i + '0');/*print current digit*/
-	if (i != 0){
+	for (i = 0; i <= 9; i++)
+	{
+		putchar(i + '0');/*print current digit*/
+	if (i != 9)
+	{
 		putchar(',');/*print , after every number*/
 		putchar(' ');/*print space after every number*/
 	}
