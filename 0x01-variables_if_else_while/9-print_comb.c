@@ -6,10 +6,10 @@
  */
 int main(void)
 {
-	/*print out first digit 0*/
-	putchar('0');
 	int i;/*declare variable i*/
 
+	/*print out first digit 0*/
+	putchar('0');
 	for (i = '1'; i <= '9'; i++){
 		putchar(',');/*print , after every number*/
 		putchar(' ');/*print space after every number*/
