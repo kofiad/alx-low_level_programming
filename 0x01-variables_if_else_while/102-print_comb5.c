@@ -5,13 +5,13 @@
  * Return: 0
  */
 
-int main(void) 
+int main(void)
 {
-    int g, i;
+	int g, i;
 
-	for (g = 0; g <= 99; g++) 
+	for (g = 0; g <= 99; g++)
 	{
-		for (i = g; i <= 99; i++) 
+		for (i = g; i <= 99; i++)
 		{
 		putchar(g / 10 + '0');
 		putchar(g % 10 + '0');
