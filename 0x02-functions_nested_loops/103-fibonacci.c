@@ -21,7 +21,7 @@ int main(void)
 		}
 		next_number = r + s;
 		r = s;
-		r = next_number;
+		s = next_number;
 	}
 	printf("%lu\n", sum);
 	return (0);
