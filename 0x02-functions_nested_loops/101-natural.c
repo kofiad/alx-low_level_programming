@@ -10,12 +10,13 @@ int main(void)
 {
 	int multiples, sum_of_multiples = 0;
 
-	for (multiples = 1; multiples < 1024; multiple++)
+	for (multiples = 1; multiples < 1024; multiples++)
 	{
-		if (multiple % 3 == 0 || multiple % 5 == 0)
+		if (multiples % 3 == 0 || multiples % 5 == 0)
 		{
 			sum_of_multiples += multiples;
 		}
 		printf("%d\n", sum_of_multiples);
 	}
+return (0);
 }
