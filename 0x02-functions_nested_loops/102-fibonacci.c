@@ -28,5 +28,6 @@ int main(void)
 			printf(", ");
 		}
 	}
+	print("\n");
 return (0);
 }
