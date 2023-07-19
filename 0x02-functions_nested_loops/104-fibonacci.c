@@ -6,7 +6,7 @@
  *
  * Return: 0
  */
-int main()
+int main(void)
 {
 	unsigned int fib1 = 1;
 	unsigned int fib2 = 2;
@@ -18,7 +18,7 @@ int main()
 	{
 	fib3 = fib1 + fib2;
 	printf("%u", fib3);
-        /* Add comma and space except for the last number*/
+	/* Add comma and space except for the last number*/
 	if (count < 97)
 	{
 		printf(", ");
@@ -28,5 +28,5 @@ int main()
 	count++;
 	}
 	printf("\n");
-	return 0;
+return (0);
 }
