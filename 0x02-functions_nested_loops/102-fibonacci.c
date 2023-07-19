@@ -17,16 +17,16 @@ int main(void)
 	/* to calculate frist 50 Fibonacci numberts*/
 	for (a = 2; a < 50; a++)
 	{
-		Fibonacci[a] = Fibonacci[a - 1] + Fibonacci[a-2];
+		Fibonacci[a] = Fibonacci[a - 1] + Fibonacci[a - 2];
 	}
 	/* to print fibonacci numbers separated by comma and space*/
 	for (a = 0; a < 50; a++)
 	{
 		printf("%d", Fibonacci[a]);
 		if (a < (50 - 1))
-				{
-					printf(", ");
-				}
+		{
+			printf(", ");
+		}
 	}
 return (0);
 }
