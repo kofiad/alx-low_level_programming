@@ -14,7 +14,7 @@ int main(void)
 
 	for (Fibonacci = 0; Fibonacci < 50; Fibonacci++)
 	{
-		addition = fib1 + fib2;						
+		addition = fib1 + fib2;
 		printf("%lu", addition);
 		fib1 = fib2;
 		fib2 = addition;
