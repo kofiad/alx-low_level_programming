@@ -33,7 +33,7 @@ long largest_prime_factor(long num)
 	if (num > 2)
 		max_prime = num;
 
-	return max_prime;
+	return (max_prime);
 }
 
 /**
