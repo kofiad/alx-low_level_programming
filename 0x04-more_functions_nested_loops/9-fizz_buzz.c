@@ -1,36 +1,31 @@
 #include <stdio.h>
-#include "main.h"
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
+void fizz_buzz(void)
+{
+	int num;
+    for (num = 1; num <= 100; num++)
+    {
+        if (num % 3 == 0 && num % 5 == 0)
+        {
+            printf("FizzBuzz ");
+        }
+        else if (num % 3 == 0)
+        {
+            printf("Fizz ");
+        }
+        else if (num % 5 == 0)
+        {
+            printf("Buzz ");
+        }
+        else
+        {
+            printf("%d ", num);
+        }
+    }
+}
+
 int main(void)
 {
-	int i;
-
-	for (i = 1; i <= 100; i++)
-	{
-		if (i % 3 == 0 && i % 5 ==0)
-		{
-			printf("FizzBuzz\t");
-		}
-		else if (i % 3 == 0)
-		{
-			printf("Fizz\t");
-		}
-		else if (i % 5 == 0)
-		{
-			printf("Buzz\t");
-		}
-		else
-		{
-			printf("%d\t", i);
-		}
-	}
-
-	printf("\n");
-
-	return (0);
+    fizz_buzz();
+    return 0;
 }
