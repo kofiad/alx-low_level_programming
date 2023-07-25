@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdbool.h>
 #include <limits.h>
 
@@ -12,16 +13,11 @@ int _atoi(char *s)
 	int isNegative = 1;
 	int result = 0;
 
-	/* Skip leading white spaces */
-	while (*s == ' ')
+	/* Skip leading non-digit characters */
+	while (*s && (*s < '0' || *s > '9'))
 	{
-		s++;
-	}
-
-	/* Handle the optional sign */
-	while (*s == '-' || *s == '+')
-	{
-		isNegative *= (*s == '-') ? -1 : 1;
+		if (*s == '-')
+			isNegative *= -1;
 		s++;
 	}
 
@@ -32,7 +28,7 @@ int _atoi(char *s)
 		if (result > (INT_MAX - (*s - '0')) / 10)
 		{
 			/* Overflow will occur, so return the maximum/minimum value accordingly */
-			return (isNegative == -1 ? INT_MIN : INT_MAX);
+			return isNegative == -1 ? INT_MIN : INT_MAX;
 		}
 
 		/* Update the result */
@@ -41,5 +37,21 @@ int _atoi(char *s)
 	}
 
 	/* Apply the sign to the result if it was negative */
-	return (result * isNegative);
+	return result * isNegative;
+}
+
+int main(void)
+{
+	int n;
+
+	n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
+	printf("%d\n", n);
+
+	n = _atoi("        +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA            ");
+	printf("%d\n", n);
+
+	n = _atoi("+++++    +-+    2242454");
+	printf("%d\n", n);
+
+	return (0);
 }
