@@ -1,57 +1,46 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <limits.h>
+#include "main.h"
 
 /**
- * _atoi - Convert a string to an integer.
- * @s: The string to convert.
+ * _atoi - converts a string to an integer
+ * @s: string to be converted
  *
- * Return: The converted integer.
+ * Return: the int converted from the string
  */
 int _atoi(char *s)
 {
-	int isNegative = 1;
-	int result = 0;
+	int i, d, n, len, f, digit;
 
-	/* Skip leading non-digit characters */
-	while (*s && (*s < '0' || *s > '9'))
-	{
-		if (*s == '-')
-			isNegative *= -1;
-		s++;
-	}
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
 
-	/* Convert the remaining characters into an integer */
-	while (*s >= '0' && *s <= '9')
+	while (s[len] != '\0')
+		len++;
+
+	while (i < len && f == 0)
 	{
-		/* Check for overflow before adding the next digit */
-		if (result > (INT_MAX - (*s - '0')) / 10)
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
 		{
-			/* Overflow will occur, so return the maximum/minimum value accordingly */
-			return isNegative == -1 ? INT_MIN : INT_MAX;
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
 		}
-
-		/* Update the result */
-		result = result * 10 + (*s - '0');
-		s++;
+		i++;
 	}
 
-	/* Apply the sign to the result if it was negative */
-	return result * isNegative;
-}
+	if (f == 0)
+		return (0);
 
-int main(void)
-{
-	int n;
-
-	n = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
-	printf("%d\n", n);
-
-	n = _atoi("        +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA            ");
-	printf("%d\n", n);
-
-	n = _atoi("+++++    +-+    2242454");
-	printf("%d\n", n);
-
-	return (0);
+	return (n);
 }
