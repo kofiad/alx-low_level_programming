@@ -14,22 +14,19 @@ char generate_random_char(void)
     return rand() % ('~' - ' ' + 1) + ' ';
 }
 
-/**
- * main - Generate a random valid password for 101-crackme program.
- *
- * Return: Always 0.
- */
 int main(void)
 {
-    srand(time(NULL)); // Seed the random number generator with the current time
+    char password[PASSWORD_LENGTH + 1]; /* +1 for the null terminator */
+    int i;
 
-    char password[PASSWORD_LENGTH + 1]; // +1 for the null terminator
-    password[PASSWORD_LENGTH] = '\0'; // Null-terminate the password string
+    srand(time(NULL)); /* Seed the random number generator with the current time */
 
-    for (int i = 0; i < PASSWORD_LENGTH; i++)
+    for (i = 0; i < PASSWORD_LENGTH; i++)
     {
         password[i] = generate_random_char();
     }
+
+    password[PASSWORD_LENGTH] = '\0'; /* Null-terminate the password string */
 
     printf("Random valid password: %s\n", password);
 
