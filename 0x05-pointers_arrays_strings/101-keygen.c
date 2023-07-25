@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define PASSWORD_LENGTH 64
+#define PASSWORD_LENGTH 15
 
 /**
- * generate_random_char - Generate a random printable ASCII character.
+ * generate_random_char - Generate a random lowercase letter ('a' to 'z').
  *
- * Return: The random character.
+ * Return: The random lowercase letter.
  */
 char generate_random_char(void)
 {
-    return rand() % ('~' - ' ' + 1) + ' ';
+    return rand() % ('z' - 'a' + 1) + 'a';
 }
 
 int main(void)
@@ -28,7 +28,7 @@ int main(void)
 
     password[PASSWORD_LENGTH] = '\0'; /* Null-terminate the password string */
 
-    printf("Random valid password: %s\n", password);
+    printf("%s\n", password);
 
     return 0;
 }
