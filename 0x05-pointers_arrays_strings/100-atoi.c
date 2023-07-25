@@ -9,37 +9,37 @@
  */
 int _atoi(char *s)
 {
-    int isNegative = 1;
-    int result = 0;
+	int isNegative = 1;
+	int result = 0;
 
-    /* Skip leading white spaces */
-    while (*s == ' ')
-    {
-        s++;
-    }
+	/* Skip leading white spaces */
+	while (*s == ' ')
+	{
+		s++;
+	}
 
-    /* Handle the optional sign */
-    while (*s == '-' || *s == '+')
-    {
-        isNegative *= (*s == '-') ? -1 : 1;
-        s++;
-    }
+	/* Handle the optional sign */
+	while (*s == '-' || *s == '+')
+	{
+		isNegative *= (*s == '-') ? -1 : 1;
+		s++;
+	}
 
-    /* Convert the remaining characters into an integer */
-    while (*s >= '0' && *s <= '9')
-    {
-        /* Check for overflow before adding the next digit */
-        if (result > (INT_MAX - (*s - '0')) / 10)
-        {
-            /* Overflow will occur, so return the maximum/minimum value accordingly */
-            return isNegative == -1 ? INT_MIN : INT_MAX;
-        }
+	/* Convert the remaining characters into an integer */
+	while (*s >= '0' && *s <= '9')
+	{
+		/* Check for overflow before adding the next digit */
+		if (result > (INT_MAX - (*s - '0')) / 10)
+		{
+			/* Overflow will occur, so return the maximum/minimum value accordingly */
+			return isNegative == -1 ? INT_MIN : INT_MAX;
+		}
 
-        /* Update the result */
-        result = result * 10 + (*s - '0');
-        s++;
-    }
+		/* Update the result */
+		result = result * 10 + (*s - '0');
+		s++;
+	}
 
-    /* Apply the sign to the result if it was negative */
-    return result * isNegative;
+	/* Apply the sign to the result if it was negative */
+	return result * isNegative;
 }
