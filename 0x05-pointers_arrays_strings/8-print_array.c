@@ -9,8 +9,6 @@
  */
 void print_array(int *a, int n)
 {
-	if (a != NULL && n > 0)
-	{
 		int i;
 
 		for (i = 0; i < (n - 1); i++)
@@ -22,5 +20,4 @@ void print_array(int *a, int n)
 				printf("%d, ", a[n - 1]);
 			}
 		printf("\n");
-	}
 }
