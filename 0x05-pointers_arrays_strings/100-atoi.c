@@ -18,13 +18,9 @@ int _atoi(char *s)
 		s++;
 
 	/* Check the sign */
-	if (*s == '-')
+	while (*s == '-' || *s == '+')
 	{
-		sign = -1;
-		s++;
-	}
-	else if (*s == '+')
-	{
+		sign = (*s == '-') ? -sign : sign;
 		s++;
 	}
 
