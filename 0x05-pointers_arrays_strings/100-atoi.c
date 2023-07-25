@@ -19,13 +19,9 @@ int _atoi(char *s)
     }
 
     /* Handle the optional sign */
-    if (*s == '-')
+    while (*s == '-' || *s == '+')
     {
-        isNegative = -1;
-        s++;
-    }
-    else if (*s == '+')
-    {
+        isNegative *= (*s == '-') ? -1 : 1;
         s++;
     }
 
