@@ -9,6 +9,9 @@
  */
 int _atoi(char *s)
 {
+    int isNegative = 1;
+    int result = 0;
+
     /* Skip leading white spaces */
     while (*s == ' ')
     {
@@ -16,7 +19,6 @@ int _atoi(char *s)
     }
 
     /* Handle the optional sign */
-    int isNegative = 1;
     if (*s == '-')
     {
         isNegative = -1;
@@ -28,7 +30,6 @@ int _atoi(char *s)
     }
 
     /* Convert the remaining characters into an integer */
-    int result = 0;
     while (*s >= '0' && *s <= '9')
     {
         /* Check for overflow before adding the next digit */
