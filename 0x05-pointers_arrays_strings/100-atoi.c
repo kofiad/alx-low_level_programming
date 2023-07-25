@@ -32,7 +32,7 @@ int _atoi(char *s)
 		if (result > (INT_MAX - (*s - '0')) / 10)
 		{
 			/* Overflow will occur, so return the maximum/minimum value accordingly */
-			return isNegative == -1 ? INT_MIN : INT_MAX;
+			return (isNegative == -1 ? INT_MIN : INT_MAX);
 		}
 
 		/* Update the result */
@@ -41,5 +41,5 @@ int _atoi(char *s)
 	}
 
 	/* Apply the sign to the result if it was negative */
-	return result * isNegative;
+	return (result * isNegative);
 }
