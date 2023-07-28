@@ -10,8 +10,7 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int d;
-	size_t length;
+	int d, length = 0;
 
 	/*verify destination arrat is not null*/
 	while (dest[length] != '\0')
@@ -20,9 +19,10 @@ char *_strcat(char *dest, char *src)
 	}
 
 	/*innitialize for loop to concatenate two strings*/
-	for (d = 0; src[d] != '\0'; d++; length++)
+	for (d = 0; src[d] != '\0'; d++)
 	{
 		dest[length] = src[d];
+		length++;
 	}
 
 	/*add terminating null byte at the end*/
