@@ -20,19 +20,19 @@ char *leet(char *c)
 
 /*  scan through string */
 	stringCounter = 0;
-	while (s[stringCounter] != '\0')
+	while (c[stringCounter] != '\0')
 /* check whether Letter is found */
 	{
 		Count = 0;
 		while (Count < 10)
 		{
-			if (Letters[Count] == s[stringCounter])
+			if (Letters[Count] == c[stringCounter])
 			{
-				s[stringCounter] = Numbers[Count];
+				c[stringCounter] = Numbers[Count];
 			}
 			Count++;
 		}
 		stringCounter++;
 	}
-	return (s);
+	return (c);
 }
