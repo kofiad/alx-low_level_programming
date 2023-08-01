@@ -12,21 +12,15 @@
  */
 void print_diagsums(int *a, int size)
 {
-	int w, size1, size2;
+	int mainDiagonalSum = 0;
+	int secondDiagoanlSum = 0;
+	int w;
 
-	size1 = 0;
-	size2 = 0;
-
-	for (w = 0; w < (size * size); w++)
+	for (w = 0; w <  size; w++)
 	{
-		if (w % (size + 1) == 0)
-		{
-			size += a[w];
-		}
-		if (w % (size - 1) == 0 && w != 0 && w < size * size - 1)
-		{
-			size2 += a[w];
-		}
+		mainDiagonalSum += a[w * size + w];
+		secondDiagonalSum += a[w * size + (size - 1 - w)];
 	}
-	printf("%d, %d\n", size1, size2);
+	printf("%d\n", mainDiagonalSum);
+	printf("%d\n", secondDiagonalSum);
 }
