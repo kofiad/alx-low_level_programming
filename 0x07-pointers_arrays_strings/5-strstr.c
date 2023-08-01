@@ -19,16 +19,16 @@ char *_strstr(char *haystack, char *needle)
 		string_a = haystack;
 		string_b = needle;
 		while (*haystack != '\0' && *string_b != '\0'
-				&& *haystack == *string_2)
+				&& *haystack == *string_b)
 		{
 			haystack++;
-			string_2++;
+			string_b++;
 		}
-		if (*string_2 == '\0')
+		if (*string_b == '\0')
 		{
-			return (string_1);
+			return (string_a);
 		}
-		haystack = string_1 + 1;
+		haystack = string_a + 1;
 	}
 		return (0);
 
