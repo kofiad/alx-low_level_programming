@@ -12,28 +12,29 @@
 char *cap_string(char *str)
 {
 	/*Start with capitalizing the first character*/
-	int capitalize_next = 1;
+	int capitalize_next;
 
-	while (*str != '\0')
+	while (str[capitalize_next] != '\0')
 	{
+		if (str[0] >= 97 && str[0] <= 122)
+		{
+			str[0] = str[0] -32;
+		}
 		/*Check if the current character is a word separator*/
-		if (*str == ' ' || *str == '\t' ||
-				*str == '\n' || *str == ',' || *str == ';' ||
-			*str == '.' || *str == '!' || *str == '?' || *str == '"' || *str == '(' ||
-			*str == ')' || *str == '{' || *str == '}')
+		if (str[capitalize_next] == ' ' || str[capitalize_next] == '\t' ||
+				str[capitalize_next] == '\n' || str[capitalize_next] == ','
+				|| str[capitalize_next] == ';' ||str[capitalize_next] == '.'
+				|| str[capitalize_next] == '!' || str[capitalize_next] == '?'
+				|| str[capitalize_next] == '"' || str[capitalize_next] == '('
+				||str[capitalize_next] == ')' || str[capitalize_next] == '{'
+				|| str[capitalize_next] == '}')
 		{
-			/*Set flag to capitalize the next character*/
-			capitalize_next = 1;
+			if (str[capitalize_next + 1] >= 97 && str[capitalize_next] <= 122)
+			{
+			str[capitalize_next + 1] = str[capitalize_next + 1] - 32;
+			}
 		}
-		else if (capitalize_next)
-		{
-			/*Capitalize the current character*/
-			*str = toupper(*str);
-			/*Reset flag to not capitalize the next character*/
-			capitalize_next = 0;
-		}
-		str++; /*Move to the next character*/
+		capitalize_next++;
 	}
-
 	return (str);
 }
