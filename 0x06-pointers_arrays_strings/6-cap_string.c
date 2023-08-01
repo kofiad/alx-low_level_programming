@@ -18,15 +18,15 @@ char *cap_string(char *str)
 	{
 		if (str[0] >= 97 && str[0] <= 122)
 		{
-			str[0] = str[0] -32;
+			str[0] = str[0] - 32;
 		}
 		/*Check if the current character is a word separator*/
 		if (str[capitalize_next] == ' ' || str[capitalize_next] == '\t' ||
 				str[capitalize_next] == '\n' || str[capitalize_next] == ','
-				|| str[capitalize_next] == ';' ||str[capitalize_next] == '.'
+				|| str[capitalize_next] == ';' || str[capitalize_next] == '.'
 				|| str[capitalize_next] == '!' || str[capitalize_next] == '?'
 				|| str[capitalize_next] == '"' || str[capitalize_next] == '('
-				||str[capitalize_next] == ')' || str[capitalize_next] == '{'
+				|| str[capitalize_next] == ')' || str[capitalize_next] == '{'
 				|| str[capitalize_next] == '}')
 		{
 			if (str[capitalize_next + 1] >= 97 && str[capitalize_next] <= 122)
