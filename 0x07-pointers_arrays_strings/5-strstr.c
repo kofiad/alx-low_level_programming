@@ -4,8 +4,8 @@
  * _strstr - finds the first occurrence of the substring needle
  * in the string hastack. The terminating bytes are not compared.
  *
- * @needle:
- * @haystack:
+ * @needle: substring of interest
+ * @haystack: string of interest
  *
  * Return: pointer to beginning of the located substring
  * NULL if the substring is not found
