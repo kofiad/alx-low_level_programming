@@ -31,7 +31,7 @@ int _sqrt_recursion_checker(int n, int start, int end)
 		return (_sqrt_recursion_checker(n, start, mid - 1));
 		}
 	}
-	return (-1)/*natural root not found*/
+	return (-1);/*natural root not found*/
 }
 /**
  * _sqrt_recursion - returns natural square root of a number
