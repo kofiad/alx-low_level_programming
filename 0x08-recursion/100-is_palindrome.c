@@ -12,11 +12,11 @@ int str_length(char *s)
 		return (0); /*Base case: end of the string*/
 	}
 	/*Recursive call with the next character in the string*/
-    return (1 + str_length(s + 1));
+	return (1 + str_length(s + 1));
 }
 
 /**
- * is_palinfrom_helper - checks for palindrome
+ * is_palindrome_helper - checks for palindrome
  * @s: string of interest
  * @start: starting  byte
  * @end: ending byte
