@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * wildcamp - compares two strings
+ * wildcmp - compares two strings
  *
  * @s1: first string
  * @s2: second string
@@ -17,7 +17,8 @@ int wildcmp(char *s1, char *s2)
 		/*Both strings are empty, consider them identical*/
 		return (1);
 	}
-	else if (*s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0') {
+	else if (*s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0')
+	{
 		/*Handle case when s2 starts with '*'*/
 		return (wildcmp(s1, s2 + 1));
 	}
