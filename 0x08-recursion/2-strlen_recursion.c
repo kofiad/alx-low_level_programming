@@ -6,6 +6,7 @@
  * @s: string of interest
  *
  * Returns: length of string
+ * 0 at base
  */
 int _strlen_recursion(char *s)
 {
