@@ -12,27 +12,27 @@
  */
 int _sqrt_recursion_checker(int n, int start, int end)
 {
-	int mid;
-	long long square;
+	int mid, quotient, averge;
 
 	if (start <= end)
 	{
 		mid = start + (end - start) / 2;
-		square = (long long) mid * mid;
-		if (square == n)
+		quotient = n / mid;
+		average = (mid + quotient) / 2;
+		if (average == mid || average == quotient)
 		{
-			return (mid);
+			return (average);
 		}
-		else if (square < n)
+		else if (average < mid)
 		{
-			return (_sqrt_recursion_checker(n, mid + 1, end));
+			return (_sqrt_recursion_checker(n, average + 1, end));
 		}
 		else
 		{
-		return (_sqrt_recursion_checker(n, start, mid - 1));
+		return (_sqrt_recursion_checker(n, start, average));
 		}
 	}
-	return (-1);/*natural root not found*/
+	return (start - 1);/*natural root not found*/
 }
 /**
  * _sqrt_recursion - returns natural square root of a number
