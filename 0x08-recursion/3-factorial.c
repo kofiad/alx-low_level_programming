@@ -21,6 +21,6 @@ int factorial(int n)
 	}
 	else
 	{/*recursive call to calculate factorial*/
-		return (n * factorial(n-1));
+		return (n * factorial(n - 1));
 	}
 }
