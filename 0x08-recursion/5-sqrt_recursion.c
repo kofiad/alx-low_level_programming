@@ -12,7 +12,7 @@
  */
 int _sqrt_recursion_checker(int n, int start, int end)
 {
-	int mid, quotient, averge;
+	int mid, quotient, average;
 
 	if (start <= end)
 	{
