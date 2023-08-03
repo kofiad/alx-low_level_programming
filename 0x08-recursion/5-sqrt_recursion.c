@@ -41,9 +41,9 @@ int _sqrt_recursion_checker(int n, int start, int end)
  */
 int _sqrt_recursion(int n)
 {
-	if n < 0)
+	if (n < 0)
 	{
 		return (-1);
 	}
-	return (_sqrt_recursion_checker(n, 0, n);
+	return (_sqrt_recursion_checker(n, 0, n));
 }
