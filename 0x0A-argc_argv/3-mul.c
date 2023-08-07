@@ -25,6 +25,6 @@ int main(int argc, char *argv[])
 	v = atoi(argv[2]);
 	/*calculate and print the multiplication result*/
 	product = a * v;
-	printf("%d\n", result);
+	printf("%d\n", product);
 	return (0);
 }
