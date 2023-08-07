@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int i;
 
 	/*Print program name from command line argument*/
-	for(i = 0; argv[0][i] != '\0'; i++)
+	for (i = 0; argv[0][i] != '\0'; i++)
 	{
 		putchar(argv[0][i]);
 	}
