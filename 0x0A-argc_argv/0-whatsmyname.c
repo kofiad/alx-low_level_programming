@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - prints the name of the program
@@ -11,6 +12,15 @@
  */
 int main(int argc, char *argv[])
 {
-	_putchar("%s\n". argv[0]);
+	int i;
+
+	/*Print program name from command line argument*/
+	for(i = 0; argv[0][i] != '\0'; i++)
+	{
+		putchar(argv[0][i]);
+	}
+	putchar('\n');
+	/*to avoid unused parameter warning*/
+	(void)argc;
 	return (0);
 }
