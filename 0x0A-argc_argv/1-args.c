@@ -15,6 +15,6 @@ int main(int argc, char *argv[])
 	(void)argv;
 
 	/*print the number of arguments minus program name*/
-	putchar(argc - 1);
+	printf("%d\n", argc - 1);
 	return (0);
 }
