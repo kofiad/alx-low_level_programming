@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		/*checking if each character of argument is a digit*/
 		for (a = 0; argv[s][a] != '\0'; a++)
 		{
-			if (argv[s][a] < '0' || argv [s][a] > '9')
+			if (argv[s][a] < '0' || argv[s][a] > '9')
 			{
 				it_is_number = false;
 				break;
