@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	/*Ensure there's only 1 argument (program name counts as one)*/
 	if (argc != 2)
 	{
-		printf("Oops!\n");
+		printf("Error\n");
 		return (1);
 	}
 
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 	}
 
 	/*Print the result*/
-	printf("Minimum coins: %d\n", minCoins);
+	printf("%d\n", minCoins);
 
 	return (0);
 }
