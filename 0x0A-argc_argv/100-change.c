@@ -13,7 +13,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int cents, coins, numCoins, minCoins, i;
+	int cents, numCoins, minCoins, i;
+	int coins[] = {25, 10, 5, 2, 1};
 
 	/*Ensure there's only 1 argument (program name counts as one)*/
 	if (argc != 2)
@@ -33,7 +34,6 @@ int main(int argc, char *argv[])
 	}
 
 	/*Coin denominations*/
-	coins[] = {25, 10, 5, 2, 1};
 	numCoins = sizeof(coins) / sizeof(coins[0]);
 
 	/*Calculate minimum coins*/
