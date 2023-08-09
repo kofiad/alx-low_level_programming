@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	/*Check for negative amount*/
 	if (cents < 0)
 	{
-		printf("No coins needed.\n");
+		printf("0");
 		return (0);
 	}
 
