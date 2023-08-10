@@ -16,13 +16,19 @@ char *str_concat(char *s1, char *s2)
 	char *concatenated;
 
 	/*calculate length of each string*/
-	while (s1[length_of_s1] != '\0')
+	if (s1 != NULL)
 	{
-		length_of_s1++;
+		while (s1[length_of_s1] != '\0')
+		{
+			length_of_s1++;
+		}
 	}
-	while (s2[length_of_s2] != '\0')
+	if (s2 != NULL)
 	{
-		length_of_s2++;
+		while (s2[length_of_s2] != '\0')
+		{
+			length_of_s2++;
+		}
 	}
 	/*allocate memory for the concatenated string*/
 	concatenated = (char *)malloc((length_of_s1 + length_of_s2 + 1)
