@@ -15,6 +15,7 @@ char *_strdup(char *str)
 {
 	char *duplicate;
 	unsigned int length = 0;
+	unsigned int i;
 
 	/*return NULL if string is NULL*/
 	if (str == NULL)
@@ -22,7 +23,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	/*find length of input string*/
-	while (str[length] = '\0')
+	while (str[length] != '\0')
 	{
 		length++;
 	}
