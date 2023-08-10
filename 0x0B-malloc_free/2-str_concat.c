@@ -15,15 +15,6 @@ char *str_concat(char *s1, char *s2)
 	unsigned int length_of_s1 = 0, length_of_s2 = 0, i, j;
 	char *concatenated;
 
-	/*check for case of null string by treating each as empty string*/
-	if (s1 == 0)
-	{
-		return (NULL);
-	}
-	if (s2 == 0)
-	{
-		return (NULL);
-	}
 	/*calculate length of each string*/
 	while (s1[length_of_s1] != '\0')
 	{
