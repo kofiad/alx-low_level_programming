@@ -27,11 +27,11 @@ char *str_concat(char *s1, char *s2)
 	/*calculate length of each string*/
 	while (s1[length_of_s1] != '\0')
 	{
-		length++;
+		length_of_s1++;
 	}
 	while (s2[length_of_s2] != '\0')
 	{
-		length++;
+		length_of_s2++;
 	}
 	/*allocate memory for the concatenated string*/
 	concatenated = (char *)malloc((length_of_s1 + length_of_s2 + 1)
