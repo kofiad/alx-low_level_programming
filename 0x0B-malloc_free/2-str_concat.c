@@ -38,14 +38,15 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	/*copy characters from s1 and s2 to concatenated string*/
+	/*copy characters from s1 to concatenated string*/
 	for (i = 0; i < length_of_s1; i++)
 	{
 		concatenated[i] = s1[i];
 	}
+	/*copy characters from s2 to concatenated string*/
 	for (j = 0; j < length_of_s2; j++)
 	{
-		concatenated[j] = s2[j];
+		concatenated[i + j] = s2[j];
 	}
 	/*add NULL terminator at the end*/
 	concatenated[i + j] = '\0';
