@@ -14,7 +14,7 @@ char *argstostr(int ac, char **av)
 {
 	char *result;
 	int totalLength = 0;
-	int i = 0, j = 0, k=0; 
+	int i = 0, j = 0, k=0;
 
 	/*return NULL if av is NULL or ac is zero or negative*/
 	if (ac <= 0 || av == NULL)
@@ -24,6 +24,7 @@ char *argstostr(int ac, char **av)
 	/*Calculate total length needed for concateneated string*/
 	for (i = 0; i < ac; i++)
 	{
+		j = 0;
 		while (av[i][j] != '\0')
 		{
 			totalLength++;
@@ -41,14 +42,18 @@ char *argstostr(int ac, char **av)
 	/*Copy each argument followed by newline character to the result*/
 	for (i = 0; i < ac; i++)
 	{
+		j = 0;
 		while (av[i][j] != '\0')
 		{
 			result[k] = av[i][j];
 			k++;
 			j++;
 		}
-		result[k] = '\n';/*adds newline character*/
-		k++;
+		if (i < ac - 1)
+		{
+			result[k] = '\n';/*adds newline character*/
+			k++;
+		}
 	}
 	result[k] = '\0';/*add NULL terminator at the end*/
 	return (result);
