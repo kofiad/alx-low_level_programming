@@ -16,8 +16,8 @@ char *argstostr(int ac, char **av)
 	int totalLength = 0;
 	int i = 0, j = 0, k=0; 
 
-	/*return NULL if av or ac is NULL*/
-	if (ac == NULL || av == NULL)
+	/*return NULL if av is NULL or ac is zero or negative*/
+	if (ac <= 0 || av == NULL)
 	{
 		return (NULL);
 	}
