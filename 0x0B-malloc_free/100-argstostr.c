@@ -1,60 +1,50 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
- * argstostr - concatenates all argument of my program
- *
+ * argstostr - concatenates all arguments of the program
  * @ac: argument count
- * @av: argument value
- *
- * Return: pointer to a new string
- * NULL on failure
+ * @av: pointer to array of size ac
+ * Return: NULL to ac == 0 or av == null, pointer to new string
+ * NULL on fail
  */
 char *argstostr(int ac, char **av)
 {
-	char *result;
-	int totalLength = 0;
-	int i = 0, j = 0, k=0;
+	int i, j, k, totalLength;
+	char *arg;
 
-	/*return NULL if av is NULL or ac is zero or negative*/
-	if (ac <= 0 || av == NULL)
-	{
+	totalLength = 0;
+	k = 0;
+	if (ac == 0 || av == NULL)
 		return (NULL);
-	}
-	/*Calculate total length needed for concateneated string*/
-	for (i = 0; i < ac; i++)
+	i = 0;
+	while (i < ac)
 	{
 		j = 0;
-		while (av[i][j] != '\0')
+		while (av[i][j])
 		{
 			totalLength++;
 			j++;
 		}
-		/*creating newline character*/
 		totalLength++;
+		i++;
 	}
-	/*allocating memory for concatenated string*/
-	result = (char *)malloc((totalLength + 1) * sizeof(char));
-	if (result == NULL)
-	{/*return NULL on memory allocation failure*/
+	arg = malloc((sizeof(char) * size) + 1);
+	if (arg == NULL)
 		return (NULL);
-	}
-	/*Copy each argument followed by newline character to the result*/
-	for (i = 0; i < ac; i++)
+	i = 0;
+	while (i < ac)
 	{
 		j = 0;
-		while (av[i][j] != '\0')
+		while (av[i][j])
 		{
-			result[k] = av[i][j];
-			k++;
+			arg[k] = av[i][j];
 			j++;
-		}
-		if (i < ac - 1)
-		{
-			result[k] = '\n';/*adds newline character*/
 			k++;
 		}
+		arg[k] = '\n';
+		k++;
+		i++;
 	}
-	result[k] = '\0';/*add NULL terminator at the end*/
-	return (result);
+	arg[k] = '\0';
+	return (arg);
 }
