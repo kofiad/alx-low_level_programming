@@ -1,49 +1,44 @@
-#include "main.h"
 #include <stdlib.h>
 
-/**
- * _realloc - reallocates a memory block using malloc and free
- *
- * @ptr: pointer to previous memory allocation
- * @old_size: size of allocated space for ptr
- * @new_size: sice of new memory block
- *
- * Return: ptr if new_size == old_size
- * NULL, if new_size = 0, and ptr != NULL
- */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
-{
-	char *j;
-	char *old_pointer = ptr;
-	unsigned int n;
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size) {
+	void *new_ptr;
 
-	if (ptr == NULL)
-	{
-		j = malloc(new_size);
-		return (j);
+	// Handle the case of NULL pointer
+	if (ptr == NULL) {
+		new_ptr = malloc(new_size);
+		return new_ptr;
 	}
-	else if (new_size == 0)
-	{
+
+	// Handle the case of new_size being 0
+	if (new_size == 0) {
 		free(ptr);
-		return (NULL);
+		return NULL;
 	}
-	else if (new_size == old_size)
-	{
-		return (ptr);
+
+	// If new_size is equal to old_size, do nothing and return ptr
+	if (new_size == old_size) {
+		return ptr;
 	}
-	j = malloc(new_size);
-	if (j == NULL)
-	{
-		return (NULL);
+
+	// Allocate memory for the new block
+	new_ptr = malloc(new_size);
+
+	if (new_ptr == NULL) {
+		return NULL; // Return NULL on failure
 	}
-	if (new_size > old_size)
-	{
-		new_size = old_size;
+
+	// Copy the contents to the new block
+	if (new_size > old_size) {
+		for (unsigned int i = 0; i < old_size; i++) {
+			*((char *)new_ptr + i) = *((char *)ptr + i);
+		}
+	} else {
+		for (unsigned int i = 0; i < new_size; i++) {
+			*((char *)new_ptr + i) = *((char *)ptr + i);
+		}
 	}
-	for (n = 0; n < new_size; n++)
-	{
-		j[n] = old_pointer[n];
-	}
-	free(ptr);
-	return (j);
+
+	free(ptr); // Free the old block
+
+	return new_ptr; // Return the pointer to the new block
 }
