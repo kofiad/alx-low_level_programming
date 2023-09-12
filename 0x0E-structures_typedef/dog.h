@@ -11,7 +11,7 @@
  * with elements such as name, age and owner.
  */
 
-struct Dog
+struct dog
 {
 	char *name;
 	float age;
