@@ -68,8 +68,8 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-	printf(" class:
-	switch ( e__ident[EI_CLASS]
+	printf("class:");
+	switch (e_ident[EI_CLASS])
 	{
 	case ELFCLASSNONE:
 		printf("none\n");
@@ -81,7 +81,7 @@ void print_class(unsigned char *e_ident)
 		printf("ELF64\n");
 		break;
 	default:
-		printf(" < unknown : % x > \n", e_ident[EI_CLASS]);
+		printf(" <unknown: %x> \n", e_ident[EI_CLASS]);
 	}
 }
 
