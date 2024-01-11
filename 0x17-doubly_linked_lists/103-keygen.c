@@ -3,13 +3,12 @@
 #include <time.h>
 
 /**
- * f4 - finds the biggest number
- *
+ * biggest_number - finds the biggest number
  * @usrn: username
  * @len: length of username
  * Return: the biggest number
  */
-int f4(char *usrn, int len)
+int biggest_number(char *usrn, int len)
 {
 	int ch;
 	int vch;
@@ -32,13 +31,13 @@ int f4(char *usrn, int len)
 }
 
 /**
- * f5 - multiplies each char of username
+ * multiple_of_char - multiplies each char of username
  *
  * @usrn: username
  * @len: length of username
  * Return: multiplied char
  */
-int f5(char *usrn, int len)
+int multiple_of_char(char *usrn, int len)
 {
 	int ch;
 	int vch;
@@ -55,12 +54,12 @@ int f5(char *usrn, int len)
 }
 
 /**
- * f6 - generates a random char
+ * random_char - generates a random char
  *
  * @usrn: username
  * Return: a random char
  */
-int f6(char *usrn)
+int random_char(char *usrn)
 {
 	int ch;
 	int vch;
@@ -114,12 +113,12 @@ int main(int argc, char **argv)
 		vch = vch + 1;
 	}
 	keygen[2] = ((char *)alph)[(ch ^ 85) & 63];
-	/* ----------- f4 ----------- */
-	keygen[3] = ((char *)alph)[f4(argv[1], len)];
-	/* ----------- f5 ----------- */
-	keygen[4] = ((char *)alph)[f5(argv[1], len)];
-	/* ----------- f6 ----------- */
-	keygen[5] = ((char *)alph)[f6(argv[1])];
+	/* ----------- biggest_number ----------- */
+	keygen[3] = ((char *)alph)[biggest_number(argv[1], len)];
+	/* ----------- multiple_of_char ----------- */
+	keygen[4] = ((char *)alph)[multiple_of_char(argv[1], len)];
+	/* ----------- random_char ----------- */
+	keygen[5] = ((char *)alph)[random_char(argv[1])];
 	keygen[6] = '\0';
 	for (ch = 0; keygen[ch]; ch++)
 		printf("%c", keygen[ch]);
